@@ -7,12 +7,19 @@ class Checkbox extends React.Component {
     this.state = {
       checked: false
     };
+
+this.handleClick = this.handleClick.bind(this);
   }
 
+handleClick(event) {
+  this.setState ({
+    checked: !this.state.checked
+  })
+}
 
   render() {
     return (
-      <button className="checkbox icon">
+      <button className="checkbox icon" onClick={this.handleClick}>
         <i className="material-icons">{this.state.checked ? 'check_box' :
           'check_box_outline_blank'}</i>
         </button>
